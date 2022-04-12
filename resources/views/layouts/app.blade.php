@@ -1,7 +1,9 @@
 <html>
 
 <head>
-    <title>App Name - @yield('title')</title>
+    <title>App aji_tirto - @yield('title')</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
         rel="stylesheet">
