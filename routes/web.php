@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\crud_Malas;
+use App\Http\Controllers\validasiController;
 // use App\Http\Controllers\crudContoller;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('silahkan ke web /crud ');
+    return view('menus ');
 });
 
+// crud
 Route::get('/crud', [crud_Malas::class, 'index']);
 Route::get('/crud/tambah', [crud_Malas::class, 'tambah']);
 Route::post('/crud/store', [crud_Malas::class, 'store']);
@@ -28,3 +30,8 @@ Route::get('/crud/hapus/{id}', [crud_Malas::class, 'hapus']);
 
 
 Route::get('/crud/cari', [crud_Malas::class, 'cari']);
+
+// validasi
+
+Route::get('/input', [validasiController::class, 'input']);
+Route::post('/proses', [validasiController::class, 'proses']);
