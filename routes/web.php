@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\crud_Malas;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\validasiController;
 // use App\Http\Controllers\crudContoller;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +37,22 @@ Route::get('/crud/cari', [crud_Malas::class, 'cari']);
 
 Route::get('/input', [validasiController::class, 'input']);
 Route::post('/proses', [validasiController::class, 'proses']);
+
+
+// eloquent
+
+Route::get('/pegawai', [PegawaiController::class, 'index']);
+Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
+Route::post('/pegawai/store', [PegawaiController::class, 'store']);
+Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
+Route::put('/pegawai/update/{id}', [PegawaiController::class, 'update']);
+Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
+
+// guru
+Route::get('/guru', [GuruController::class, 'index']);
+Route::get('/guru/hapus/{id}', [GuruController::class, 'hapus']);
+Route::get('/guru/trash', [GuruController::class, 'trash']);
+Route::get('/guru/kembalikan/{id}', [GuruController::class, 'kembalikan']);
+Route::get('/guru/kembalikan_semua', [GuruController::class, 'kembalikan_semua']);
+Route::get('/guru/hapus_permanen/{id}', [GuruController::class, 'hapus_permanen']);
+Route::get('/guru/hapus_permanen_semua', [GuruController::class, 'hapus_permanen_semua']);
