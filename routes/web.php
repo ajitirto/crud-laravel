@@ -3,7 +3,10 @@
 use App\Http\Controllers\crud_Malas;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\RelasiController;
 use App\Http\Controllers\validasiController;
+use App\Http\Controllers\WebController;
 // use App\Http\Controllers\crudContoller;
 use Illuminate\Support\Facades\Route;
 
@@ -56,3 +59,16 @@ Route::get('/guru/kembalikan/{id}', [GuruController::class, 'kembalikan']);
 Route::get('/guru/kembalikan_semua', [GuruController::class, 'kembalikan_semua']);
 Route::get('/guru/hapus_permanen/{id}', [GuruController::class, 'hapus_permanen']);
 Route::get('/guru/hapus_permanen_semua', [GuruController::class, 'hapus_permanen_semua']);
+
+
+// pengguna
+
+Route::get('/pengguna', [PenggunaController::class, 'index']);
+
+// web
+
+Route::get('/article', [WebController::class, 'index']);
+
+
+// relasi controller
+Route::get('/anggota', [RelasiController::class, 'index']);
